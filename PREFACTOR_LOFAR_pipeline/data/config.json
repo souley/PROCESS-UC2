@@ -12,7 +12,7 @@
                 "description": "SLURM job file path",
                 "default": "",
                 "propertyOrder": 1
-              },
+              }
             },
             "required": [
                 "slurm_job_file"
