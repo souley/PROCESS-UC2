@@ -1,1 +1,1 @@
-include LOFAR_pipeline_template/data/*.json
+include PREFACTOR_LOFAR_pipeline/data/*.json
