@@ -1,0 +1,1 @@
+include LOFAR_pipeline_template/data/*.json
