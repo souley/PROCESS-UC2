@@ -15,8 +15,9 @@
               },
             },
             "required": [
-                "slurm_job_file",
+                "slurm_job_file"
             ]
         },
+	"id": "PREFACTOR"
       }
 }
