@@ -28,5 +28,5 @@ def run_pipeline(observation, **kargs):
     cmd_arr = ["xenon", "scheduler", "ssh", "--location", "localhost", "exec", "/bin/hostname"]
     print("Running command " + test_cmd)
     #cmd_out =subprocess.run(test_cmd, stdout=subprocess.STDOUT, text=True).stdout
-    cmd_out =subprocess.run(cmd_arr).stdout
-    return cmd_out
+    subprocess.run(cmd_arr).stdout
+    #return cmd_out
