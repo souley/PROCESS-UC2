@@ -24,6 +24,6 @@ def give_argument_names(required=False):
 
 def run_pipeline(observation, **kargs):
 	# Start your pipeline here
-    test_cmd = "xenon scheduler ssh --location localhost exec /bin/hostname"
-    subprocess.run(test_cmd)
-    return "Running command " + test_cmd
+    test_cmd = 'xenon scheduler ssh --location localhost exec /bin/hostname'
+    print("Running command " + test_cmd)
+    return subprocess.run(test_cmd, capture_output=True, stdout=subprocess.STDOUT, text=True).stdout
