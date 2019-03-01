@@ -7,6 +7,9 @@ def give_name():
     name = list(jsonfile.keys())[0]
     return name
 
+def give_version():
+    return "0.1"
+
 def give_config():
     json_config_file = os.path.join(os.path.dirname(__file__), "data", "config.json")
     with open(json_config_file) as json_data:
