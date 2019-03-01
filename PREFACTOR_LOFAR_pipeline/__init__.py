@@ -29,5 +29,5 @@ def run_pipeline(observation, **kargs):
     #print("Running command " + test_cmd)
     #cmd_out =subprocess.run(test_cmd, stdout=subprocess.STDOUT, text=True).stdout
     #cmd_out = subprocess.run(cmd_arr, text=True, capture_output=True).stdout
-    subprocess.run(cmd_arr)
+    #subprocess.run(cmd_arr)
     return "Command launched ..."
