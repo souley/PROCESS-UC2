@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+from fabric import Connection
 
 def give_name():
     jsonfile = give_config()
@@ -33,4 +34,5 @@ def run_pipeline(observation, **kargs):
     #cmd_out =subprocess.run(test_cmd, stdout=subprocess.STDOUT, text=True).stdout
     #cmd_out = subprocess.run(cmd_arr, text=True, capture_output=True).stdout
     #subprocess.run(cmd_arr)
-    return "Command launched ..."
+    conn = Connection(host="localhost", user="souley")
+    return conn.run('/bin/hostname').stdout
