@@ -34,7 +34,7 @@ def run_pipeline(observation, **kargs):
     #cmd_out =subprocess.run(test_cmd, stdout=subprocess.STDOUT, text=True).stdout
     #cmd_out = subprocess.run(cmd_arr, text=True, capture_output=True).stdout
     #subprocess.run(cmd_arr)
-    cmd_str = "sbatch /home/madougou/sjob"
+    cmd_str = "sbatch /var/scratch/madougou/LOFAR/sjob"
     conn = Connection(host="fs0.das5.cs.vu.nl", user="madougou")
     out_items = conn.run(cmd_str).stdout.split()
     job_id = out_items[len(out_items) - 1]
