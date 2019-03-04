@@ -34,5 +34,5 @@ def run_pipeline(observation, **kargs):
     #cmd_out =subprocess.run(test_cmd, stdout=subprocess.STDOUT, text=True).stdout
     #cmd_out = subprocess.run(cmd_arr, text=True, capture_output=True).stdout
     #subprocess.run(cmd_arr)
-    conn = Connection(host="localhost", user="souley")
+    conn = Connection(host="fs0.das5.cs.vu.nl", user="madougou")
     return conn.run('/bin/hostname').stdout
