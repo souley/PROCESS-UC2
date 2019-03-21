@@ -51,5 +51,5 @@ def run_pipeline(observation, **kargs):
         \"workflow\": \"workflow.cwl\",
         \"input\": {}
     }
-    res = requests.post(url, headers=headers, data=data)
+    res = requests.post(url, headers=headers, data=json.dumps(data))
     return res.status_code
