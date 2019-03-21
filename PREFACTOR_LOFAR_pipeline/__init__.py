@@ -1,7 +1,7 @@
 import json
 import os
 import subprocess
-from fabric import Connection
+#from fabric import Connection
 import requests
 
 def give_name():
@@ -51,5 +51,5 @@ def run_pipeline(observation, **kargs):
         "workflow": "workflow.cwl",
         "input": {}
     }
-    res = requests.get(url, headers=headers, data=data)
+    res = requests.post(url, headers=headers, data=data)
     return res.status_code
