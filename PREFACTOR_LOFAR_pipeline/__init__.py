@@ -47,9 +47,9 @@ def run_pipeline(observation, **kargs):
         'api-key': 'in1uP28Y1Et9YGp95VLYzhm5Jgd5M1r0CKI7326RHwbVcHGa'
     }
     data = {
-        \"name\": \"PREFACTOR CWL Workflow\",
-        \"workflow\": \"workflow.cwl\",
-        \"input\": {}
+        "name": "PREFACTOR CWL Workflow",
+        "workflow": "workflow.cwl",
+        "input": {}
     }
     res = requests.post(url, headers=headers, data=json.dumps(data))
     return res.status_code
