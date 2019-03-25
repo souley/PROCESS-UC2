@@ -29,29 +29,7 @@ def give_argument_names(required=False):
 
 def run_pipeline(observation, **kargs):
 	# Start your pipeline here
-    print("===OBSERVATION: " + observation)
-    test_cmd = 'xenon scheduler ssh --location localhost exec /bin/hostname'
-    cmd_arr = ["xenon", "scheduler", "ssh", "--location", "localhost", "exec", "/bin/hostname"]
-#    #print("Running command " + test_cmd)
-#    #cmd_out =subprocess.run(test_cmd, stdout=subprocess.STDOUT, text=True).stdout
-#    #cmd_out = subprocess.run(cmd_arr, text=True, capture_output=True).stdout
-#    #subprocess.run(cmd_arr)
-#    cmd_str = "sbatch /var/scratch/madougou/LOFAR/sjob"
-#    conn = Connection(host="fs0.das5.cs.vu.nl", user="madougou")
-#    out_items = conn.run(cmd_str).stdout.split()
-#    job_id = out_items[len(out_items) - 1]
-#    return job_id
-
-#    url = 'http://localhost:8443/jobs'
-#    headers = {
-#        'Content-Type': 'application/json',
-#        'api-key': 'in1uP28Y1Et9YGp95VLYzhm5Jgd5M1r0CKI7326RHwbVcHGa'
-#    }
-#    data = {
-#        "name": "PREFACTOR CWL Workflow",
-#        "workflow": "workflow.cwl",
-#        "input": {}
-#    }
+#    print("===OBSERVATION: " + observation)
     url = '/jobs'
     headers = {
         'Content-Type': 'application/json',
@@ -69,11 +47,6 @@ def run_pipeline(observation, **kargs):
             data["name"] = kargs[kw]
         elif kw == "workflow_cwl":
             data["workflow"] = kargs[kw]
-    print("Server URL: ", url)
-    print("Headers: ")
-    print(headers)
-    print("Data: ")
-    print(data)
-#    res = requests.post(url, headers=headers, data=json.dumps(data))
-#    return res.status_code
+    res = requests.post(url, headers=headers, data=json.dumps(data))
+    return res.status_code
     return "Testing ..."
