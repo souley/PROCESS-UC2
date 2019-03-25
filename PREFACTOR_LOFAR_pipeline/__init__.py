@@ -68,10 +68,10 @@ def run_pipeline(observation, **kargs):
         elif kw == "workflow_name":
             data["name"] = kargs[kw]
         elif kw == "workflow_cwl":
-            headers["workflow"] = kargs[kw]
+            data["workflow"] = kargs[kw]
     print("Server URL: ", url)
     print("Headers: ")
-    print(hearders)
+    print(headers)
     print("Data: ")
     print(data)
 #    res = requests.post(url, headers=headers, data=json.dumps(data))
