@@ -6,16 +6,40 @@
             "title": "Configuration Parameters:",
             "description": "This is LOFAR PREFACTOR pipeline for direction independent calibration",
             "properties": {
-              "slurm_job_file": {
+              "xenon_server_url": {
                 "type": "string",
-                "title": "slurm_job_file",
-                "description": "SLURM job file path",
+                "title": "xenon_server_url",
+                "description": "Xenon-flow server URL",
                 "default": "",
                 "propertyOrder": 1
+              },
+              "workflow_name": {
+                  "type": "string",
+                  "title": "workflow_name",
+                  "description": "Workflow name as seen by Xenon-flow",
+                  "default": "",
+                  "propertyOrder": 2
+              },
+              "workflow_cwl": {
+                  "type": "string",
+                  "title": "workflow_cwl",
+                  "description": "CWL description of the workflow",
+                  "default": "",
+                  "propertyOrder": 3
+              },
+              "workflow_input": {
+                  "type": "string",
+                  "title": "workflow_input",
+                  "description": "Inputs to CWL workflow",
+                  "default": "",
+                  "propertyOrder": 4
               }
             },
             "required": [
-                "slurm_job_file"
+                "xenon_server_url",
+                "xenon_server_url",
+                "workflow_name",
+                "workflow_input"
             ]
         },
 	"id": "PREFACTOR"
