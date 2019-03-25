@@ -69,7 +69,11 @@ def run_pipeline(observation, **kargs):
             data["name"] = kargs[kw]
         elif kw == "workflow_cwl":
             headers["workflow"] = kargs[kw]
-
-    res = requests.post(url, headers=headers, data=json.dumps(data))
-    return res.status_code
-#    return "Testing ..."
+    print("Server URL: ", url)
+    print("Headers: ")
+    print(hearders)
+    print("Data: ")
+    print(data)
+#    res = requests.post(url, headers=headers, data=json.dumps(data))
+#    return res.status_code
+    return "Testing ..."
