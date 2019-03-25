@@ -41,22 +41,35 @@ def run_pipeline(observation, **kargs):
 #    out_items = conn.run(cmd_str).stdout.split()
 #    job_id = out_items[len(out_items) - 1]
 #    return job_id
-    url = 'http://localhost:8443/jobs'
+
+#    url = 'http://localhost:8443/jobs'
+#    headers = {
+#        'Content-Type': 'application/json',
+#        'api-key': 'in1uP28Y1Et9YGp95VLYzhm5Jgd5M1r0CKI7326RHwbVcHGa'
+#    }
+#    data = {
+#        "name": "PREFACTOR CWL Workflow",
+#        "workflow": "workflow.cwl",
+#        "input": {}
+#    }
+    url = '/jobs'
     headers = {
         'Content-Type': 'application/json',
-        'api-key': 'in1uP28Y1Et9YGp95VLYzhm5Jgd5M1r0CKI7326RHwbVcHGa'
     }
     data = {
-        "name": "PREFACTOR CWL Workflow",
-        "workflow": "workflow.cwl",
         "input": {}
     }
-    jsonfile = give_config()
-    name = list(jsonfile.keys())[0]
-    properties = jsonfile[name]["schema"]["properties"]
-    print(kargs)
-#    print(properties["xenon_server_url"])
-#    print("server URL: ", required['xenon_server_url'])
-#    res = requests.post(url, headers=headers, data=json.dumps(data))
-#    return res.status_code
-    return "Testing ..."
+#    print(kargs)
+    for kw in kargs:
+        if kw == "xenon_server_url":
+            url = kargs[kw] + url
+        elif kw == "api_key":
+            headers["api-key"] = kargs[kw]
+        elif kw == "workflow_name":
+            data["name"] = kargs[kw]
+        elif kw == "workflow_cwl":
+            headers["workflow"] = kargs[kw]
+
+    res = requests.post(url, headers=headers, data=json.dumps(data))
+    return res.status_code
+#    return "Testing ..."
