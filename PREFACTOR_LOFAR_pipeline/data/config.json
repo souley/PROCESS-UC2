@@ -37,9 +37,8 @@
             },
             "required": [
                 "xenon_server_url",
-                "xenon_server_url",
                 "workflow_name",
-                "workflow_input"
+                "workflow_cwl"
             ]
         },
 	"id": "PREFACTOR"
