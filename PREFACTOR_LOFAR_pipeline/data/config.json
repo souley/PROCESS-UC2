@@ -13,30 +13,31 @@
                 "default": "",
                 "propertyOrder": 1
               },
+              "api_key": {
+                  "type": "string",
+                  "title": "api-key",
+                  "description": "API key for Xenon-flow",
+                  "default": "",
+                  "propertyOrder": 2
+              },
               "workflow_name": {
                   "type": "string",
                   "title": "workflow_name",
                   "description": "Workflow name as seen by Xenon-flow",
                   "default": "",
-                  "propertyOrder": 2
+                  "propertyOrder": 3
               },
               "workflow_cwl": {
                   "type": "string",
                   "title": "workflow_cwl",
                   "description": "CWL description of the workflow",
                   "default": "",
-                  "propertyOrder": 3
-              },
-              "workflow_input": {
-                  "type": "string",
-                  "title": "workflow_input",
-                  "description": "Inputs to CWL workflow",
-                  "default": "",
                   "propertyOrder": 4
               }
             },
             "required": [
                 "xenon_server_url",
+                "api_key",
                 "workflow_name",
                 "workflow_cwl"
             ]
