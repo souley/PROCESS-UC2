@@ -53,8 +53,9 @@ def run_pipeline(observation, **kargs):
     }
     jsonfile = give_config()
     name = list(jsonfile.keys())[0]
-    required = jsonfile[name]["schema"]["required"]
-    print("server URL: ", required['xenon_server_url'])
+    properties = jsonfile[name]["schema"]["properties"]
+    print(properties["xenon_server_url"])
+#    print("server URL: ", required['xenon_server_url'])
 #    res = requests.post(url, headers=headers, data=json.dumps(data))
 #    return res.status_code
     return "Testing ..."
