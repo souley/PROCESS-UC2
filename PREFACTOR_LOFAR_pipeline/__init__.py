@@ -52,6 +52,7 @@ def run_pipeline(observation, **kargs):
     # check content of res.data and retrieve res.data['id']???
 #    print(res.content)
     res_data = json.loads(res.content.decode("utf8"))
-    print("===xenon job id: ", res_data["id"])
-    return res.status_code
+#    print("===xenon job id: ", res_data["id"])
+    res_val = "xenon-flow job id: " + res_data["id"]
+    return res_val
 #    return "Testing ..."
