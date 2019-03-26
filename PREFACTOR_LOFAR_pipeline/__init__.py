@@ -50,6 +50,8 @@ def run_pipeline(observation, **kargs):
     res = requests.post(url, headers=headers, data=json.dumps(data))
     # Parse HttpResponse and return xenon-flow job id for later use
     # check content of res.data and retrieve res.data['id']???
-    print(res.content)
+#    print(res.content)
+    res_data = json.loads(res.content.decode("utf8"))
+    print("===xenon job id: ", res_data["id"])
     return res.status_code
 #    return "Testing ..."
