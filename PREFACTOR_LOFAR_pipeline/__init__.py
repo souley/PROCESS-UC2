@@ -48,5 +48,8 @@ def run_pipeline(observation, **kargs):
         elif kw == "workflow_cwl":
             data["workflow"] = kargs[kw]
     res = requests.post(url, headers=headers, data=json.dumps(data))
+    # Parse HttpResponse and return xenon-flow job id for later use
+    # check content of res.data and retrieve res.data['id']???
+    print(res.data)
     return res.status_code
-    return "Testing ..."
+#    return "Testing ..."
