@@ -54,5 +54,5 @@ def run_pipeline(observation, **kargs):
     res_data = json.loads(res.content.decode("utf8"))
 #    print("===xenon job id: ", res_data["id"])
     res_val = "xenon-flow job id: " + res_data["id"]
-    return res_data["id"]
+    return res
 #    return "Testing ..."
