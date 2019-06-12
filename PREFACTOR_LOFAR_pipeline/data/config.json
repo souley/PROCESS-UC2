@@ -8,7 +8,7 @@
             "properties": {
               "lta_login": {
                 "type": "string",
-                "title": "LTA user login",
+                "title": "lta_login",
                 "description": "LTA user login",
                 "default": "",
                 "propertyOrder": 1
@@ -50,7 +50,7 @@
               },
               "hpc_pwd": {
                 "type": "string",
-                "title": "User pass on HPC",
+                "title": "hpc_pwd",
                 "description": "User pass on HPC",
                 "default": "",
                 "propertyOrder": 7
@@ -86,13 +86,13 @@
             },
             "required": [
                 "lta_user",
-		"lta_pwd",
-		"hpc_host",
-		"hpc_path",
-		"srm_cert",
-		"hpc_user",
-		"lta_pwd",
-		"xenon_server_url",
+                "lta_pwd",
+                "hpc_host",
+                "hpc_path",
+                "srm_cert",
+                "hpc_user",
+                "lta_pwd",
+                "xenon_server_url",
                 "api_key",
                 "workflow_name",
                 "workflow_cwl"
