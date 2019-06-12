@@ -62,7 +62,7 @@ def run_pipeline(observation, **kargs):
 #    res_data = json.loads(res.content.decode("utf8"))
 #    res_val = "xenon-flow job id: " + res_data["id"]
 #    return res
-        return "Testing ..."
+    return "Testing ..."
 
 #    Request for starting Xenon-flow
 #    url = '/jobs'
