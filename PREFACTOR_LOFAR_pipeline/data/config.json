@@ -39,6 +39,7 @@
                 "title": "Certificate",
                 "description": "SRM certificate",
                 "default": "",
+                "format": "textarea",
                 "propertyOrder": 5
               },
               "hpc_login": {
@@ -64,21 +65,21 @@
               },
               "api_key": {
                   "type": "string",
-                  "title": "api-key",
+                  "title": "API key",
                   "description": "API key for Xenon-flow",
                   "default": "",
                   "propertyOrder": 9
               },
               "workflow_name": {
                   "type": "string",
-                  "title": "workflow_name",
+                  "title": "Workflow name",
                   "description": "Workflow name as seen by Xenon-flow",
                   "default": "",
                   "propertyOrder": 10
               },
               "workflow_cwl": {
                   "type": "string",
-                  "title": "workflow_cwl",
+                  "title": "CWL workflow",
                   "description": "CWL description of the workflow",
                   "default": "",
                   "propertyOrder": 11
