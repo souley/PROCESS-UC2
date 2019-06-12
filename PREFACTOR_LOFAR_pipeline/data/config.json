@@ -9,20 +9,20 @@
               "lta_login": {
                 "type": "string",
                 "title": "LTA login",
-                "description": "LTA user login",
+                "description": "User login on LTA",
                 "default": "",
                 "propertyOrder": 1
               },
               "lta_pwd": {
                 "type": "string",
                 "title": "LTA pass",
-                "description": "LTA user pass",
+                "description": "User pass on LTA",
                 "default": "",
                 "propertyOrder": 2
               },
               "hpc_host": {
                 "type": "string",
-                "title": "HPC head node",
+                "title": "HPC head",
                 "description": "HPC head node",
                 "default": "",
                 "propertyOrder": 3
@@ -30,13 +30,13 @@
               "hpc_path": {
                 "type": "string",
                 "title": "Destination path on HPC",
-                "description": "Destination path on HPC ",
+                "description": "Destination path on HPC",
                 "default": "",
                 "propertyOrder": 4
               },
               "srm_cert": {
                 "type": "string",
-                "title": "SRM certificate",
+                "title": "Certificate",
                 "description": "SRM certificate",
                 "default": "",
                 "propertyOrder": 5
