@@ -44,7 +44,7 @@ def run_pipeline(observation, **kargs):
             "src": {"id": 246403},
             "credentials": {}
         },
-        "webhook": {"method": "post", "url": "http://localhost:8000/sessions", "headers": {}},
+        "webhook": {"method": "post", "url": "http://06993970.ngrok.io", "headers": {}},
         "options": {},
     }
 
