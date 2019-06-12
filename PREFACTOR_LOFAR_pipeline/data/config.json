@@ -1,6 +1,6 @@
 { 
       "PREFACTOR": {
-        "label": "PREFACTOR_LOFAR_pipeline",
+        "label": "PREFACTOR LOFAR pipeline",
         "schema": {
             "type": "object",
             "title": "Configuration Parameters:",
