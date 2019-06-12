@@ -6,33 +6,40 @@
             "title": "Configuration Parameters:",
             "description": "This is LOFAR PREFACTOR pipeline for direction independent calibration",
             "properties": {
+              "staging_url": {
+                "type": "string",
+                "title": "Staging URL",
+                "description": "Staging service URL",
+                "default": "http://145.100.130.7:32010",
+                "propertyOrder": 1
+              },
               "lta_login": {
                 "type": "string",
                 "title": "LTA login",
                 "description": "User login on LTA",
                 "default": "",
-                "propertyOrder": 1
+                "propertyOrder": 2
               },
               "lta_pwd": {
                 "type": "string",
                 "title": "LTA pass",
                 "description": "User pass on LTA",
                 "default": "",
-                "propertyOrder": 2
+                "propertyOrder": 3
               },
               "hpc_host": {
                 "type": "string",
                 "title": "HPC head",
                 "description": "HPC head node",
                 "default": "",
-                "propertyOrder": 3
+                "propertyOrder": 4
               },
               "hpc_path": {
                 "type": "string",
                 "title": "Destination path",
                 "description": "Where observation will be transferred to on HPC",
                 "default": "",
-                "propertyOrder": 4
+                "propertyOrder": 5
               },
               "srm_cert": {
                 "type": "string",
@@ -40,49 +47,49 @@
                 "description": "SRM certificate for transfer",
                 "default": "",
                 "format": "textarea",
-                "propertyOrder": 5
+                "propertyOrder": 6
               },
               "hpc_login": {
                 "type": "string",
                 "title": "HPC login",
                 "description": "User login on HPC",
                 "default": "",
-                "propertyOrder": 6
+                "propertyOrder": 7
               },
               "hpc_pwd": {
                 "type": "string",
                 "title": "HPC pass",
                 "description": "User pass on HPC",
                 "default": "",
-                "propertyOrder": 7
+                "propertyOrder": 8
               },
               "xenon_server_url": {
                 "type": "string",
                 "title": "Xenon-flow URL",
                 "description": "Where Xenon-flow server is running",
                 "default": "",
-                "propertyOrder": 8
+                "propertyOrder": 9
               },
               "api_key": {
                   "type": "string",
                   "title": "API key",
                   "description": "API key for Xenon-flow",
                   "default": "",
-                  "propertyOrder": 9
+                  "propertyOrder": 10
               },
               "workflow_name": {
                   "type": "string",
                   "title": "Workflow name",
                   "description": "Workflow name as seen by Xenon-flow",
                   "default": "",
-                  "propertyOrder": 10
+                  "propertyOrder": 11
               },
               "workflow_cwl": {
                   "type": "string",
                   "title": "CWL workflow",
                   "description": "CWL description of the workflow",
                   "default": "",
-                  "propertyOrder": 11
+                  "propertyOrder": 12
               }
             },
             "required": [
