@@ -29,15 +29,15 @@
               },
               "hpc_path": {
                 "type": "string",
-                "title": "Destination path on HPC",
-                "description": "Destination path on HPC",
+                "title": "Destination path",
+                "description": "Where observation will be transferred to on HPC",
                 "default": "",
                 "propertyOrder": 4
               },
               "srm_cert": {
                 "type": "string",
                 "title": "Certificate",
-                "description": "SRM certificate",
+                "description": "SRM certificate for transfer",
                 "default": "",
                 "format": "textarea",
                 "propertyOrder": 5
@@ -58,8 +58,8 @@
               },
               "xenon_server_url": {
                 "type": "string",
-                "title": "xenon_server_url",
-                "description": "Xenon-flow server URL",
+                "title": "Xenon-flow URL",
+                "description": "Where Xenon-flow server is running",
                 "default": "",
                 "propertyOrder": 8
               },
