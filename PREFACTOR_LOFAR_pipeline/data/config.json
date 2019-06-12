@@ -93,6 +93,7 @@
               }
             },
             "required": [
+                "staging_url",
                 "lta_login",
                 "lta_pwd",
                 "hpc_host",
