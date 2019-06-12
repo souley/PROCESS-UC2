@@ -38,9 +38,10 @@ def run_pipeline(observation, **kargs):
     }
         
     data = {
+        "id": "staging",
         "cmd": {"type": "stage",
             "subtype": "lofar",
-            "src": {"type": "srm", "paths": srmuris},
+            "src": {"id": 246403},
             "credentials": {}
         },
         "webhook": {"method": "post", "url": "http://localhost:8000/sessions", "headers": {}},
