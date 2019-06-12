@@ -8,14 +8,14 @@
             "properties": {
               "lta_login": {
                 "type": "string",
-                "title": "lta_login",
+                "title": "LTA login",
                 "description": "LTA user login",
                 "default": "",
                 "propertyOrder": 1
               },
               "lta_pwd": {
                 "type": "string",
-                "title": "LTA user pass",
+                "title": "LTA pass",
                 "description": "LTA user pass",
                 "default": "",
                 "propertyOrder": 2
@@ -41,16 +41,16 @@
                 "default": "",
                 "propertyOrder": 5
               },
-              "hpc_user": {
+              "hpc_login": {
                 "type": "string",
-                "title": "User login on HPC",
+                "title": "HPC login",
                 "description": "User login on HPC",
                 "default": "",
                 "propertyOrder": 6
               },
               "hpc_pwd": {
                 "type": "string",
-                "title": "hpc_pwd",
+                "title": "HPC pass",
                 "description": "User pass on HPC",
                 "default": "",
                 "propertyOrder": 7
@@ -85,13 +85,13 @@
               }
             },
             "required": [
-                "lta_user",
+                "lta_login",
                 "lta_pwd",
                 "hpc_host",
                 "hpc_path",
                 "srm_cert",
-                "hpc_user",
-                "lta_pwd",
+                "hpc_login",
+                "hpc_pwd",
                 "xenon_server_url",
                 "api_key",
                 "workflow_name",
