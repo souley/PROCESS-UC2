@@ -43,7 +43,7 @@ def run_pipeline(observation, **kargs):
             "src": {"type": "srm", "paths": srmuris},
             "credentials": {}
         },
-        "webhook": {"method": "post", "url": "http://6ddeedfc.ngrok.io", "headers": {}},
+        "webhook": {"method": "post", "url": "http://localhost:8000/sessions", "headers": {}},
         "options": {},
     }
 
@@ -55,14 +55,14 @@ def run_pipeline(observation, **kargs):
             data["cmd"]["credentials"]["lofarUsername"] = kargs[kw]
         elif kw == "lta_pwd":
             data["cmd"]["credentials"]["lofarPassword"] = kargs[kw]
-    reqData = data=json.dumps(data)
-    print("===REQ URL=", url)
-    print("===REQ DATA=", reqData)
-#    res = requests.post(url, headers=headers, data=json.dumps(data))
-#    res_data = json.loads(res.content.decode("utf8"))
+#    reqData = data=json.dumps(data)
+#    print("===REQ URL=", url)
+#    print("===REQ DATA=", reqData)
+    res = requests.post(url, headers=headers, data=json.dumps(data))
+    res_data = json.loads(res.content.decode("utf8"))
 #    res_val = "xenon-flow job id: " + res_data["id"]
-#    return res
-    return "Testing ..."
+    return res
+#    return "Testing ..."
 
 #    Request for starting Xenon-flow
 #    url = '/jobs'
