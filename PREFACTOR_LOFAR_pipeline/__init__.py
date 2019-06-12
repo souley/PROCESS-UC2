@@ -43,7 +43,7 @@ def run_pipeline(observation, **kargs):
             "src": {"type": "srm", "paths": srmuris},
             "credentials": {}
         },
-        "webhook": {"method": "post", "url": "http://localhost:8000/sessions", "headers": {}},
+        "webhook": {"method": "post", "url": "http://6ddeedfc.ngrok.io", "headers": {}},
         "options": {},
     }
 
