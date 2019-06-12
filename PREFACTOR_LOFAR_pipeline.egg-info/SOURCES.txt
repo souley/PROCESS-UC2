@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+PREFACTOR_LOFAR_pipeline/__init__.py
+PREFACTOR_LOFAR_pipeline.egg-info/PKG-INFO
+PREFACTOR_LOFAR_pipeline.egg-info/SOURCES.txt
+PREFACTOR_LOFAR_pipeline.egg-info/dependency_links.txt
+PREFACTOR_LOFAR_pipeline.egg-info/top_level.txt
+PREFACTOR_LOFAR_pipeline.egg-info/zip-safe

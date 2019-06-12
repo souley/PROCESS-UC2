@@ -6,37 +6,93 @@
             "title": "Configuration Parameters:",
             "description": "This is LOFAR PREFACTOR pipeline for direction independent calibration",
             "properties": {
+              "lta_login": {
+                "type": "string",
+                "title": "LTA user login",
+                "description": "LTA user login",
+                "default": "",
+                "propertyOrder": 1
+              },
+              "lta_pwd": {
+                "type": "string",
+                "title": "LTA user pass",
+                "description": "LTA user pass",
+                "default": "",
+                "propertyOrder": 2
+              },
+              "hpc_host": {
+                "type": "string",
+                "title": "HPC head node",
+                "description": "HPC head node",
+                "default": "",
+                "propertyOrder": 3
+              },
+              "hpc_path": {
+                "type": "string",
+                "title": "Destination path on HPC",
+                "description": "Destination path on HPC ",
+                "default": "",
+                "propertyOrder": 4
+              },
+              "srm_cert": {
+                "type": "string",
+                "title": "SRM certificate",
+                "description": "SRM certificate",
+                "default": "",
+                "propertyOrder": 5
+              },
+              "hpc_user": {
+                "type": "string",
+                "title": "User login on HPC",
+                "description": "User login on HPC",
+                "default": "",
+                "propertyOrder": 6
+              },
+              "hpc_pwd": {
+                "type": "string",
+                "title": "User pass on HPC",
+                "description": "User pass on HPC",
+                "default": "",
+                "propertyOrder": 7
+              },
               "xenon_server_url": {
                 "type": "string",
                 "title": "xenon_server_url",
                 "description": "Xenon-flow server URL",
                 "default": "",
-                "propertyOrder": 1
+                "propertyOrder": 8
               },
               "api_key": {
                   "type": "string",
                   "title": "api-key",
                   "description": "API key for Xenon-flow",
                   "default": "",
-                  "propertyOrder": 2
+                  "propertyOrder": 9
               },
               "workflow_name": {
                   "type": "string",
                   "title": "workflow_name",
                   "description": "Workflow name as seen by Xenon-flow",
                   "default": "",
-                  "propertyOrder": 3
+                  "propertyOrder": 10
               },
               "workflow_cwl": {
                   "type": "string",
                   "title": "workflow_cwl",
                   "description": "CWL description of the workflow",
                   "default": "",
-                  "propertyOrder": 4
+                  "propertyOrder": 11
               }
             },
             "required": [
-                "xenon_server_url",
+                "lta_user",
+		"lta_pwd",
+		"hpc_host",
+		"hpc_path",
+		"srm_cert",
+		"hpc_user",
+		"lta_pwd",
+		"xenon_server_url",
                 "api_key",
                 "workflow_name",
                 "workflow_cwl"
