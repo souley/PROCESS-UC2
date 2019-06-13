@@ -101,6 +101,9 @@
             },
             "required": [
                 "staging",
+                "url",
+                "lta_login",
+                "lta_pwd",
                 "hpc_host",
                 "hpc_path",
                 "srm_cert",
