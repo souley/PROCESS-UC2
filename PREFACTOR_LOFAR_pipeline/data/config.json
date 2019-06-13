@@ -8,7 +8,6 @@
             "properties": {
               "staging": {
                   "type": "object",
-                  "collapsed": true,
                   "properties": {
                       "url": {
                           "type": "string",
@@ -28,7 +27,8 @@
                           "description": "User pass on LTA",
                           "default": "xxxxx"
                       }},
-                "propertyOrder": 1
+                  "collapsed": true,
+                  "propertyOrder": 1
               },
               "hpc_host": {
                 "type": "string",
