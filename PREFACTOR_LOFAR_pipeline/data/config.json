@@ -30,7 +30,7 @@
                           "description": "User pass on LTA",
                           "default": "xxxxx",
                           "readonly": true
-                      }}
+                      }},
                 "propertyOrder": 1
               },
               "hpc_host": {
