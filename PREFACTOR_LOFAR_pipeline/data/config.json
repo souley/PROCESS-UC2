@@ -13,7 +13,8 @@
                           "type": "string",
                           "title": "Staging URL",
                           "description": "Staging service URL",
-                          "default": "http://145.100.130.7:32010"
+                          "default": "http://145.100.130.7:32010",
+                          "readonly": true
                       },
                       "lta_login": {
                           "type": "string",
@@ -21,12 +22,17 @@
                           "description": "User login on LTA",
                           "default": "souley"
                       },
-                      "lta_pwd": {
+                      "pwd": {
                           "type": "string",
                           "title": "LTA pass",
                           "description": "User pass on LTA",
                           "default": "xxxxx"
                       }},
+                  "required": [
+                      "url",
+                      "login",
+                      "pwd"
+                  ],
                   "collapsed": true,
                   "propertyOrder": 1
               },
