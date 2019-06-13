@@ -16,7 +16,7 @@
                           "description": "Staging service URL",
                           "default": "http://145.100.130.7:32010",
                           "readonly": true,
-                          "propertyOrder": 1
+                          
                       },
                       "lta_login": {
                           "type": "string",
@@ -24,7 +24,7 @@
                           "description": "User login on LTA",
                           "default": "souley",
                           "readonly": true,
-                          "propertyOrder": 2
+                          
                       },
                       "lta_pwd": {
                           "type": "string",
@@ -32,8 +32,10 @@
                           "description": "User pass on LTA",
                           "default": "xxxxx",
                           "readonly": true,
-                          "propertyOrder": 3
-                      }}},
+                          
+                      }}
+                "propertyOrder": 1
+              },
               "hpc_host": {
                 "type": "string",
                 "title": "HPC head",
@@ -101,9 +103,6 @@
             },
             "required": [
                 "staging",
-                "url",
-                "lta_login",
-                "lta_pwd",
                 "hpc_host",
                 "hpc_path",
                 "srm_cert",
