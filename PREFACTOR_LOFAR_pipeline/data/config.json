@@ -11,22 +11,21 @@
                   "properties": {
                       "url": {
                           "type": "string",
-                          "title": "Staging URL",
-                          "description": "Staging service URL",
+                          "title": "Staging service URL",
                           "default": "http://145.100.130.7:32010",
                           "readonly": true
                       },
-                      "lta_login": {
+                      "login": {
                           "type": "string",
-                          "title": "LTA login",
-                          "description": "User login on LTA",
-                          "default": "souley"
+                          "title": "User login on LTA",
+                          "default": "souley",
+                          "readonly": true
                       },
                       "pwd": {
                           "type": "string",
-                          "title": "LTA pass",
-                          "description": "User pass on LTA",
-                          "default": "xxxxx"
+                          "title": "User pass on LTA",
+                          "default": "xxxxx",
+                          "readonly": true
                       }},
                   "required": [
                       "url",
@@ -103,9 +102,6 @@
             },
             "required": [
                 "staging",
-                "url",
-                "lta_login",
-                "lta_pwd",
                 "hpc_host",
                 "hpc_path",
                 "srm_cert",
