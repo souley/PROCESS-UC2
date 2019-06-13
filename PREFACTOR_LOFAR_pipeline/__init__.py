@@ -3,6 +3,7 @@ import os
 import subprocess
 #from fabric import Connection
 import requests
+import uuid
 
 def give_name():
     jsonfile = give_config()
@@ -31,6 +32,8 @@ def run_pipeline(observation, **kargs):
 	# Start your pipeline here
 #    print("===OBSERVATION: " + observation)
 # Request for staging data from LOFAR LTA
+    stageid = str(uuid.uuid4())
+    webhook = "http://localhost:8000/stage/" + stageid
     srmuris = observation.split("|")
     url = '/stage'
     headers = {
@@ -44,7 +47,7 @@ def run_pipeline(observation, **kargs):
             "src": {"id": 246403},
             "credentials": {}
         },
-        "webhook": {"method": "post", "url": "http://06993970.ngrok.io", "headers": {}},
+        "webhook": {"method": "post", "url": webhook, "headers": {}},
         "options": {},
     }
 
