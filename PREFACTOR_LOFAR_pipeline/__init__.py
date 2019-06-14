@@ -52,12 +52,10 @@ def run_pipeline(observation, **kargs):
 
     print(kargs)
     for kw in kargs:
-        if kw == "surl":
-            url = kargs[kw] + url
-        elif kw == "slogin":
-            data["cmd"]["credentials"]["lofarUsername"] = kargs[kw]
-        elif kw == "spwd":
-            data["cmd"]["credentials"]["lofarPassword"] = kargs[kw]
+        if kw == "staging":
+            url = kargs[kw]["url"] + url
+            data["cmd"]["credentials"]["lofarUsername"] = kargs[kw]["login"]
+            data["cmd"]["credentials"]["lofarPassword"] = kargs[kw]["pwd"]
     reqData = data=json.dumps(data)
     print("===REQ URL=", url)
     print("===REQ DATA=", reqData)
