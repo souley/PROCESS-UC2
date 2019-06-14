@@ -52,15 +52,15 @@ def run_pipeline(observation, **kargs):
 
     print(kargs)
     for kw in kargs:
-        if kw == "staging_url":
+        if kw == "surl":
             url = kargs[kw] + url
-        elif kw == "lta_login":
+        elif kw == "slogin":
             data["cmd"]["credentials"]["lofarUsername"] = kargs[kw]
-        elif kw == "lta_pwd":
+        elif kw == "spwd":
             data["cmd"]["credentials"]["lofarPassword"] = kargs[kw]
-#    reqData = data=json.dumps(data)
-#    print("===REQ URL=", url)
-#    print("===REQ DATA=", reqData)
+    reqData = data=json.dumps(data)
+    print("===REQ URL=", url)
+    print("===REQ DATA=", reqData)
     res = requests.post(url, headers=headers, data=json.dumps(data))
     res_data = json.loads(res.content.decode("utf8"))
 #    res_val = "xenon-flow job id: " + res_data["id"]
