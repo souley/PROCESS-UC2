@@ -1,118 +1,22 @@
 { 
       "PREFACTOR": {
-        "label": "PREFACTOR LOFAR pipeline",
+        "label": "PREFACTOR_LOFAR_pipeline",
         "schema": {
             "type": "object",
             "title": "Configuration Parameters:",
             "description": "This is LOFAR PREFACTOR pipeline for direction independent calibration",
             "properties": {
-              "staging": {
-                  "type": "object",
-                  "properties": {
-                      "url": {
-                          "type": "string",
-                          "title": "Staging service URL",
-                          "default": "http://145.100.130.7:32010",
-                          "readonly": true
-                      },
-                      "login": {
-                          "type": "string",
-                          "title": "User login on LTA",
-                          "default": "souley",
-                          "readonly": true
-                      },
-                      "pwd": {
-                          "type": "string",
-                          "title": "User pass on LTA",
-                          "default": "xxxxx",
-                          "readonly": true
-                      }},
-                  "required": [
-                      "url",
-                      "login",
-                      "pwd"
-                  ],
-                  "collapsed": true,
-                  "propertyOrder": 1
-              },
-              "hpc_host": {
+              "slurm_job_file": {
                 "type": "string",
-                "title": "HPC head",
-                "description": "HPC head node",
+                "title": "slurm_job_file",
+                "description": "SLURM job file path",
                 "default": "",
-                "propertyOrder": 4
+                "propertyOrder": 1
               },
-              "hpc_path": {
-                "type": "string",
-                "title": "Destination path",
-                "description": "Where observation will be transferred to on HPC",
-                "default": "",
-                "propertyOrder": 5
-              },
-              "srm_cert": {
-                "type": "string",
-                "title": "Certificate",
-                "description": "SRM certificate for transfer",
-                "default": "",
-                "format": "textarea",
-                "propertyOrder": 6
-              },
-              "hpc_login": {
-                "type": "string",
-                "title": "HPC login",
-                "description": "User login on HPC",
-                "default": "",
-                "propertyOrder": 7
-              },
-              "hpc_pwd": {
-                "type": "string",
-                "title": "HPC pass",
-                "description": "User pass on HPC",
-                "default": "",
-                "propertyOrder": 8
-              },
-              "xenon_server_url": {
-                "type": "string",
-                "title": "Xenon-flow URL",
-                "description": "Where Xenon-flow server is running",
-                "default": "",
-                "propertyOrder": 9
-              },
-              "api_key": {
-                  "type": "string",
-                  "title": "API key",
-                  "description": "API key for Xenon-flow",
-                  "default": "",
-                  "propertyOrder": 10
-              },
-              "workflow_name": {
-                  "type": "string",
-                  "title": "Workflow name",
-                  "description": "Workflow name as seen by Xenon-flow",
-                  "default": "",
-                  "propertyOrder": 11
-              },
-              "workflow_cwl": {
-                  "type": "string",
-                  "title": "CWL workflow",
-                  "description": "CWL description of the workflow",
-                  "default": "",
-                  "propertyOrder": 12
-              }
             },
             "required": [
-                "staging",
-                "hpc_host",
-                "hpc_path",
-                "srm_cert",
-                "hpc_login",
-                "hpc_pwd",
-                "xenon_server_url",
-                "api_key",
-                "workflow_name",
-                "workflow_cwl"
+                "slurm_job_file",
             ]
         },
-        "id": "PREFACTOR"
       }
 }

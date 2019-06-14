@@ -29,7 +29,7 @@ def give_argument_names(required=False):
         return properties
 
 
-def do_stagein(observation, **kargs):
+def run_pipeline(observation, **kargs):
 # Request for staging data from LOFAR LTA
     stageid = str(uuid.uuid4())
     webhook = "http://localhost:8000/stage/" + stageid
@@ -43,14 +43,14 @@ def do_stagein(observation, **kargs):
         "id": "staging",
         "cmd": {"type": "stage",
             "subtype": "lofar",
-            "src": {"id": 246403},
+            "src": {"type": "srm", "paths": srmuris},
             "credentials": {}
         },
         "webhook": {"method": "post", "url": webhook, "headers": {}},
         "options": {},
     }
 
-    #    print(kargs)
+    print(kargs)
     for kw in kargs:
         if kw == "staging_url":
             url = kargs[kw] + url
@@ -68,7 +68,7 @@ def do_stagein(observation, **kargs):
 #    return "Testing ..."
 
 
-def run_pipeline(observation, **kargs):
+def run_pipeline2(observation, **kargs):
 # Start your pipeline here
     url = '/jobs'
     headers = {
