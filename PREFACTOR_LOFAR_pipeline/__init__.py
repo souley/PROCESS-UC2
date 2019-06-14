@@ -32,7 +32,8 @@ def give_argument_names(required=False):
 def run_pipeline(observation, **kargs):
 # Request for staging data from LOFAR LTA
     stageid = str(uuid.uuid4())
-    webhook = "http://localhost:8000/stage/" + stageid
+#    webhook = "http://localhost:8000/stage/" + stageid
+    webhook = "http://localhost:8000/sessions"
     srmuris = observation.split("|")
     url = '/stage'
     headers = {
@@ -60,6 +61,7 @@ def run_pipeline(observation, **kargs):
     print("===REQ URL=", url)
     print("===REQ DATA=", reqData)
     res = requests.post(url, headers=headers, data=json.dumps(data))
+    print(res)
     res_data = json.loads(res.content.decode("utf8"))
 #    res_val = "xenon-flow job id: " + res_data["id"]
     return res
