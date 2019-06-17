@@ -30,16 +30,16 @@ def give_argument_names(required=False):
 
 
 def run_pipeline(observation, **kargs):
-# Request for staging data from LOFAR LTA
+    # Request for staging data from LOFAR LTA
     stageid = str(uuid.uuid4())
-#    webhook = "http://localhost:8000/stage/" + stageid
+    #    webhook = "http://localhost:8000/stage/" + stageid
     webhook = "http://localhost:8000/sessions"
     srmuris = ["srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lofar/ops/projects/lofarschool/246403/L246403_SAP000_SB000_uv.MS_7d4aa18f.tar"] #observation.split("|")
     url = '/stage'
     headers = {
         'Content-Type': 'application/json',
     }
-        
+    
     data = {
         "id": "staging",
         "cmd": {"type": "stage",
@@ -50,7 +50,7 @@ def run_pipeline(observation, **kargs):
         "webhook": {"method": "post", "url": webhook, "headers": {}},
         "options": {},
     }
-
+    
     print(kargs)
     for kw in kargs:
         if kw == "staging":
@@ -63,14 +63,14 @@ def run_pipeline(observation, **kargs):
     res = requests.post(url, headers=headers, data=reqData)
     print(res)
     res_data = json.loads(res.content.decode("utf8"))
-#    res_val = "xenon-flow job id: " + res_data["id"]
-    stagereqid = "Your staging request ID is " + res_data["requestId"]
-    return stagereqid
+    #    res_val = "xenon-flow job id: " + res_data["id"]
+print("Your staging request ID is ", str(res_data["requestId"]))
+return res
 #    return "Testing ..."
 
 
 def run_pipeline2(observation, **kargs):
-# Start your pipeline here
+    # Start your pipeline here
     url = '/jobs'
     headers = {
         'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ def run_pipeline2(observation, **kargs):
     data = {
         "input": {}
     }
-#    print(kargs)
+    #    print(kargs)
     for kw in kargs:
         if kw == "xenon_server_url":
             url = kargs[kw] + url
@@ -91,9 +91,9 @@ def run_pipeline2(observation, **kargs):
     res = requests.post(url, headers=headers, data=json.dumps(data))
     # Parse HttpResponse and return xenon-flow job id for later use
     # check content of res.data and retrieve res.data['id']???
-#    print(res.content)
-    res_data = json.loads(res.content.decode("utf8"))
+    #    print(res.content)
+res_data = json.loads(res.content.decode("utf8"))
 #    print("===xenon job id: ", res_data["id"])
-    res_val = "xenon-flow job id: " + res_data["id"]
-    return res
+res_val = "xenon-flow job id: " + res_data["id"]
+return res
 #    return "Testing ..."
