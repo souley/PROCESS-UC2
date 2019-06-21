@@ -33,8 +33,11 @@ def run_pipeline(observation, **kargs):
     # Request for staging data from LOFAR LTA
     stageid = str(uuid.uuid4())
     #    webhook = "http://localhost:8000/stage/" + stageid
-    webhook = "http://localhost:8000/sessions"
-    srmuris = ["srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lofar/ops/projects/lofarschool/246403/L246403_SAP000_SB000_uv.MS_7d4aa18f.tar"] #observation.split("|")
+    #    webhook = "http://localhost:8000/sessions"
+    webhook = "http://eaa0f304.ngrok.io"
+    #    srmuris = ["srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lofar/ops/projects/lofarschool/246403/L246403_SAP000_SB000_uv.MS_7d4aa18f.tar"]
+    tarfiles = observation.split("|")
+    srmuris = tarfiles # [ tarfiles[0] ] # testing
     url = '/stage'
     headers = {
         'Content-Type': 'application/json',
@@ -42,9 +45,13 @@ def run_pipeline(observation, **kargs):
     
     data = {
         "id": "staging",
-        "cmd": {"type": "stage",
+        "cmd": {
+            "type": "stage",
             "subtype": "lofar",
-            "src": {"type": "srm", "paths": srmuris},
+            "src": {
+                "type": "srm",
+                "paths": srmuris
+            },
             "credentials": {}
         },
         "webhook": {"method": "post", "url": webhook, "headers": {}},
@@ -64,8 +71,8 @@ def run_pipeline(observation, **kargs):
     print(res)
     res_data = json.loads(res.content.decode("utf8"))
     #    res_val = "xenon-flow job id: " + res_data["id"]
-print("Your staging request ID is ", str(res_data["requestId"]))
-return res
+    print("Your staging request ID is ", str(res_data["requestId"]))
+    return res
 #    return "Testing ..."
 
 
@@ -92,8 +99,8 @@ def run_pipeline2(observation, **kargs):
     # Parse HttpResponse and return xenon-flow job id for later use
     # check content of res.data and retrieve res.data['id']???
     #    print(res.content)
-res_data = json.loads(res.content.decode("utf8"))
-#    print("===xenon job id: ", res_data["id"])
-res_val = "xenon-flow job id: " + res_data["id"]
-return res
+    res_data = json.loads(res.content.decode("utf8"))
+    #    print("===xenon job id: ", res_data["id"])
+    res_val = "xenon-flow job id: " + res_data["id"]
+    return res
 #    return "Testing ..."
