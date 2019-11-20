@@ -68,8 +68,7 @@ def run_pipeline(observation, **kargs):
     reqData = json.dumps(data)
     print("===REQ URL=", url)
     print("===REQ DATA=", reqData)
-#    res = requests.post(url, headers=headers, data=reqData)
-    res = ""
+    res = requests.post(url, headers=headers, data=reqData)
     print(res)
     res_data = json.loads(res.content.decode("utf8"))
     #    res_val = "xenon-flow job id: " + res_data["id"]
